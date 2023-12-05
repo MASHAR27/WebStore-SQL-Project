@@ -27,7 +27,7 @@ Enter Your Credit Card Info:<br/>
 <input name="number" placeholder="Card Number"/><br/>
 <input name="CVV" placeholder="CVV"/><br/>
 <input name="month" type="month" placeholder="Expire Date"/><br/>
-<input name="ZIP" type="number" placeholder="Zip/Pos code"/><br/>
+<input name="ZIP" placeholder="Zip/Pos code"/><br/>
 
 <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
