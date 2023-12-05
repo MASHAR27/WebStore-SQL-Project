@@ -21,13 +21,13 @@
 
 <input type="text" name="passwordEntered" size="50">
 
-
-Enter Your Credit Card Info:
-<input name="name" placeholder="Card Holder's Name"/>
-<input name="number" placeholder="Card Number"/>
-<input name="CVV" placeholder="CVV"/>
-<input name="month" type="month" placeholder="Expire Date"/>
-<input name="ZIP" type="number" placeholder="Zip/Pos code"/>
+<br/>
+Enter Your Credit Card Info:<br/>
+<input name="name" placeholder="Card Holder's Name"/><br/>
+<input name="number" placeholder="Card Number"/><br/>
+<input name="CVV" placeholder="CVV"/><br/>
+<input name="month" type="month" placeholder="Expire Date"/><br/>
+<input name="ZIP" type="number" placeholder="Zip/Pos code"/><br/>
 
 <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
