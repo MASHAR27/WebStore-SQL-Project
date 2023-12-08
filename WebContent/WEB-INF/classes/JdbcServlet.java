@@ -2,7 +2,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
-public class JdbcServlet extends HttpServlet {
+public class JdbcServlet extends httpervlet {
 
 	private Connection con;
 
@@ -43,19 +43,19 @@ public class JdbcServlet extends HttpServlet {
 		{	System.err.println("SQLException: "+e); }
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(httpervletRequest request, httpervletResponse response)
       		throws ServletException, java.io.IOException
     {
 	        doTable(request, response);
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(httpervletRequest request, httpervletResponse response)
       		throws ServletException, java.io.IOException
     {
 	        doTable(request, response);
 	}
 
-	private void doTable(HttpServletRequest request,HttpServletResponse response)
+	private void doTable(httpervletRequest request,httpervletResponse response)
 				throws ServletException, java.io.IOException
 	{
 		response.setContentType("text/html");
