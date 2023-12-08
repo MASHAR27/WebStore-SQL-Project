@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aadil and Ashar's Shopping Cart</title>
+    <style>
+      .gif-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .giphy-embed {
+        max-width: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      h1 {
+        margin-top: 50px;
+        color: green;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 0;
+      }
+
+      .option {
+        text-align: center;
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .option a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .option a:hover {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Aadil, Ashar, and Wayne's Grocery</h1>
+    </header>
+
+    <div class="container">
+      <div class="option">
+        <img
+          src="beginshop.webp"
+          alt="Begin Shopping"
+          width="200"
+          height="150"
+        />
+        <h2><a href="listprod.jsp">Begin Shopping</a></h2>
+      </div>
+      <div class="option">
+        <img src="list.webp" alt="List All Orders" width="200" height="150" />
+        <h2><a href="listorder.jsp">List All Orders</a></h2>
+      </div>
+      <div class="option">
+        <img src="log.jpeg" alt="Login" width="200" height="150" />
+        <h2><a href="login.jsp">Login</a></h2>
+      </div>
+    </div>
+    <div class="gif-container">
+      <iframe
+        src="https://giphy.com/embed/3ohs83bO7MKV9koZuE"
+        width="480"
+        height="480"
+        frameborder="0"
+        class="giphy-embed"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <p>
+      <a
+        href="https://giphy.com/gifs/target-christmas-holiday-3ohs83bO7MKV9koZuE"
+        >via GIPHY</a
+      >
+    </p>
+  </body>
+</html>
