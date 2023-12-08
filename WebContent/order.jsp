@@ -143,12 +143,6 @@ else
         try (ResultSet generatedKeys = insertStmt.getGeneratedKeys()) {
             if (generatedKeys.next()) {
                 orderIdRetrieved = generatedKeys.getInt(1);
-
-				String CredtCardInsert = "INSERT INTO table_name (paymentType, paymentNumber, paymentExpiryDate, customerId)  VALUES ('Credit', (?), (?), (?));"
-        		CredtCardInsert.setString(1, number);
-				CredtCardInsert.setString(2, month);
-				CredtCardInsert.setString(3, custId);
-				rowsAffected = insertPay.executeUpdate();
 				if (rowsAffected == 0) {
 					throw new SQLException("Insertion into paymentmethod failed, no rows affected.");
 				}
@@ -161,6 +155,19 @@ else
         }
     } catch (SQLException e) {
         throw new SQLException("Error inserting into OrderSummary: " + e.getMessage(), e);
+    }
+		String CredtCardInsert = "INSERT INTO paymentmethod (paymentType, paymentNumber, paymentExpiryDate, customerId) VALUES ('Credit', ?, ?, ?)";
+		try(PreparedStatement insertCred = con.prepareStatement(CredtCardInsert, Statement.RETURN_GENERATED_KEYS))
+		{
+			insertCred.setString(1, number);
+			insertCred.setString(2, month);
+			insertCred.setString(3, custId);
+			int rowsAffected2 = insertCred.executeUpdate();
+			ResultSet generatedKeys2 = insertCred.getGeneratedKeys()
+			generatedKeys2.next()
+			int creditId = generatedKeys2.getInt(1);
+		} catch (SQLException e) {
+       	 throw new SQLException("Error inserting " + e.getMessage(), e);
     }
 
 		/*
@@ -286,7 +293,8 @@ else
     }//while
 
     out.println("</table>");
-
+	out.println("	<script>	function remove(a)	{		cvv = prompt('Enter Your CVV to confirm')		fetch('/shop/remove.jsp?creditId='+a+'&CVV='+cvv).then(x=>x.json()).then((x)=>{alert('x')}))	}	</script>");
+	out.println("<button onclick='remove("+creditId+")'>Remove Credit Card Info (ajax)</button>");
 	// Clear cart if order placed successfully
 
 	session.removeAttribute("productList");
