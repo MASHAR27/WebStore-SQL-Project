@@ -33,8 +33,6 @@ CREATE TABLE customer (
     PRIMARY KEY (customerId)
 );
 
-
-
 CREATE TABLE paymentmethod (
     paymentMethodId     INT IDENTITY,
     paymentType         VARCHAR(20),
