@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      function getrec() {
+        document.getElementById("recommonded").innerHTML = "These are recommonded to you: <br/> "
+        fetch("/shop/rec.jsp?uid=" + document.getElementById("cid").value).then(x => x.json()).then(x => {
+          x.map(x => {
+            document.getElementById("recommonded").innerHTML += `<a href="http://shop.weasoft.com/shop/product.jsp?productName=${x}">${x}</a><br/>`
+          })
+  
+        })
+      }
+    </script>
+    
     <title>Aadil and Ashar's Shopping Cart</title>
     <style>
       .gif-container {
@@ -89,6 +101,13 @@
         <h2><a href="useraccount.jsp">Create Account</a></h2>
       </div>
     </div>
+    <div style="padding: 10%">
+      Input your customerId to get recommondations (Ajax): <input id="cid" className="rounded-full"></input>
+    <button onclick="getrec()">Go</button>
+    <div id="recommonded">
+    </div>
+    </div>
+
     <div class="gif-container">
       <iframe
         src="https://giphy.com/embed/3ohs83bO7MKV9koZuE"

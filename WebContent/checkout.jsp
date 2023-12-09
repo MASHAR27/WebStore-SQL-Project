@@ -20,9 +20,17 @@
 <h1>Enter your password to complete the transaction:</h1>
 
 <input type="text" name="passwordEntered" size="50">
+
+<br/>
+Enter Your Credit Card Info:<br/>
+<input name="name" placeholder="Card Holder's Name"/><br/>
+<input name="number" placeholder="Card Number"/><br/>
+<input name="CVV" placeholder="CVV"/><br/>
+<input name="month" type="date" placeholder="Expire Date"/><br/>
+<input name="ZIP" placeholder="Zip/Pos code"/><br/>
+
 <input type="submit" value="Submit"><input type="reset" value="Reset">
 </form>
 
 </body>
 </html>
-

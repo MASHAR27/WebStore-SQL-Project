@@ -40,6 +40,19 @@ String custId = request.getParameter("customerId");
 String passwordEntered = request.getParameter("passwordEntered");
 @SuppressWarnings({"unchecked"})
 
+String name = request.getParameter("name");
+@SuppressWarnings({"unchecked"})
+
+String number = request.getParameter("number");
+@SuppressWarnings({"unchecked"})
+
+String CVV = request.getParameter("CVV");
+@SuppressWarnings({"unchecked"})
+
+String month = request.getParameter("month");
+@SuppressWarnings({"unchecked"})
+
+
 HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
 
 	// Make connection
@@ -138,7 +151,19 @@ else
     } catch (SQLException e) {
         throw new SQLException("Error inserting into OrderSummary: " + e.getMessage(), e);
     }
-
+String CredtCardInsert = "INSERT INTO paymentmethod (paymentType, paymentNumber, paymentExpiryDate, customerId) VALUES ('Credit', ?, ?, ?)";
+		try(PreparedStatement insertCred = con.prepareStatement(CredtCardInsert, Statement.RETURN_GENERATED_KEYS))
+		{
+			insertCred.setString(1, number);
+			insertCred.setString(2, month);
+			insertCred.setString(3, custId);
+			int rowsAffected2 = insertCred.executeUpdate();
+			// ResultSet generatedKeys2 = insertCred.getGeneratedKeys()
+			// generatedKeys2.next()
+			// int creditId = generatedKeys2.getInt(1);
+		} catch (SQLException e) {
+       	 throw new SQLException("Error inserting " + e.getMessage(), e);
+    }
 		/*
 		// Use retrieval of auto-generated keys.
 		PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);			
