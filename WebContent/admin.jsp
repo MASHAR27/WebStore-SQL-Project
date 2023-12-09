@@ -25,6 +25,12 @@
 <%
 
 try{
+    out.println("<h2><a href=\"addproduct.jsp\">Add New Product </a></h2>");
+
+    out.println("<h2><a href=\"deleteproduct.jsp\">Delete Product </a></h2>");
+
+    out.println("<h2><a href=\"updateproduct.jsp\">Update Product </a></h2>");
+
 // TODO: Write SQL query that prints out total order amount by day
             String url = "jdbc:sqlserver://cosc304_sqlserver:1433;DatabaseName=orders;TrustServerCertificate=True";
             String uid = "sa";                

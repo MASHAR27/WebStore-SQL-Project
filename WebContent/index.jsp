@@ -20,6 +20,8 @@
 <h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
 
 <h2 align="center"><a href="admin.jsp">Administrators</a></h2>
+<h2 align="center"><a href="customerOrders.jsp">Customer Orders</a></h2>
+<h2 align="center"><a href="warehouseList.jsp">Warehouse Inventory</a></h2>
 
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 

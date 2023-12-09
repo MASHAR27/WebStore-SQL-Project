@@ -20,7 +20,7 @@
 
 
 <%!
-	String validateLogin(JspWriter out,httpervletRequest request, httpession session) throws IOException
+	String validateLogin(JspWriter out,HttpServletRequest request, HttpSession session) throws IOException
 	{
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
