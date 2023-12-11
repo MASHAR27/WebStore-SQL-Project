@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="imgs">
+
+    </div>
+    <script>
+        fetch("/shop/view_images.jsp").then(x=>x.json()).then(x=>{
+            x.map((x, index)=>{
+                document.getElementById("imgs").innerHTML=`<h4>Image ${index}</h4><img src="${x}"></img>`
+            })
+        })
+    </script>
+</body>
+</html>
