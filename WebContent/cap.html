@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Image and Convert to Base64</title>
+</head>
+
+<body>
+    <h2>Upload Image and Convert to Base64</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <p>Base64 Encoded Image:</p>
+    <!-- <form method="POST" action="/shop/insert_img.jsp">  -->
+    <!-- kunyunduzikunex why i can do this and it works but use fetch not working. https://stackoverflow.com/questions/56212082/getparameter-returns-null-with-fetch-api -->
+    <textarea name="img" id="base64" rows="10" cols="70"></textarea>
+    <button onClick="send()">Send</button>
+    <!-- </form> -->
+    <script type="text/javascript">
+        document.getElementById('imageInput').addEventListener('change', function () {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (event) {
+                    var base64String = event.target.result;
+                    document.getElementById('base64').value = base64String;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        function send() {
+            let formData = new FormData();
+            formData.append('img', document.getElementById('base64').value);
+            fetch("/shop/insert_img.jsp", {
+                "method": "post",
+                // "body": formData, //cannot use form data
+                //                 ------WebKitFormBoundaryTibTLSbG0giLX6zO
+                // Content-Disposition: form-data; name="img"
+
+                //  onClick="send()"
+                // ------WebKitFormBoundaryTibTLSbG0giLX6zO--
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                "body": "img=" + encodeURIComponent(document.getElementById('base64').value),
+            }).then(() => {
+                alert("saved")
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -15,7 +15,11 @@ DROP TABLE category;
 DROP TABLE ordersummary;
 DROP TABLE paymentmethod;
 DROP TABLE customer;
+DROP TABLE Image;
 
+CREATE TABLE Image (
+    imageBase64 VARCHAR(MAX)
+);
 
 CREATE TABLE customer (
     customerId          INT IDENTITY,
